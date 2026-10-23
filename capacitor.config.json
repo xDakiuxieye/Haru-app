@@ -1,0 +1,9 @@
+
+{
+  "appId": "com.sayuri.haru",
+  "appName": "Haru",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
