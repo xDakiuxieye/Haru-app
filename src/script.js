@@ -1,0 +1,556 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+
+
+<link rel="manifest" href="./Public/manifest.json">
+
+
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="theme-color" content="#f8f3e9">
+ <meta name="description" content="Haru, un pequeño espacio para tus hábitos, pensamientos y días.">
+ <title>Haru — Mi pequeño espacio</title>
+ <link rel="stylesheet" href="src/styles.css">
+ <script src="src/script.js" defer></script>
+</head>
+
+
+<body data-theme="dia">
+ <div class="app-shell">
+   <aside class="sidebar">
+    
+<div class="brand-row">
+ <a class="brand" href="#" data-go="inicio" aria-label="Ir al inicio">
+   <span class="brand-mark">春</span>
+   <span>
+     <strong>haru</strong>
+     <small>mi pequeño espacio</small>
+   </span>
+ </a>
+
+
+ <button
+   class="profile-avatar"
+   id="profile-avatar"
+   type="button"
+   data-page="perfil"
+   aria-label="Abrir mi perfil"
+   title="Mi perfil"
+ >
+  
+ </button>
+</div>
+
+
+
+
+
+
+
+
+     <div class="sidebar-label">MI ESPACIO</div>
+
+
+     <nav class="main-nav" aria-label="Navegación principal">
+       <button class="nav-item active" data-page="inicio">
+         <span>⌂</span> Inicio
+       </button>
+       <button class="nav-item" data-page="habitos">
+         <span>✿</span> Mis hábitos
+       </button>
+       <button class="nav-item" data-page="calendario">
+         <span>▦</span> Calendario
+       </button>
+       <button class="nav-item" data-page="diario">
+         <span>♡</span> Mi diario
+       </button>
+      
+     
+     </nav>
+
+
+     <div class="sidebar-note">
+       <span class="note-flower">✿</span>
+       <p>«Florecer también lleva su tiempo».</p>
+       <small>Un día a la vez.</small>
+     </div>
+
+
+     <div class="sidebar-footer">hecho con calma ♡</div>
+   </aside>
+
+
+   <main class="main-content">
+     <header class="topbar">
+       <div>
+         <span class="eyebrow" id="top-date">TU PEQUEÑO RINCÓN</span>
+         <h1 id="top-heading">Un nuevo día</h1>
+       </div>
+       <button class="today-button" id="go-today">Hoy <span>↗</span></button>
+     </header>
+
+
+     <section class="page-section active" id="page-inicio">
+       <div class="welcome-card">
+         <div class="welcome-copy">
+          
+<span class="eyebrow">BIENVENIDA A TU ESPACIO</span>
+<h2>Hola, <span id="home-profile-name">florecita</span> <span>✿</span></h2>
+<p>No tienes que hacerlo todo hoy.<br>Empieza por algo pequeño.</p>
+
+
+           <button class="primary-button" data-go="habitos">Ver mis hábitos <span>→</span></button>
+         </div>
+         <div class="welcome-art" aria-hidden="true">
+           <span class="art-sun"></span>
+           <span class="art-branch">枝</span>
+           <span class="art-flower">❀</span>
+           <span class="art-dot">✦</span>
+         </div>
+       </div>
+
+
+       <div class="section-heading">
+         <div>
+           <span class="eyebrow">POQUITO A POQUITO</span>
+           <h2>Tu día de hoy</h2>
+         </div>
+         <button class="text-button" data-go="habitos">Ver todos →</button>
+       </div>
+
+
+       <div class="stats-grid">
+         <article class="stat-card">
+           <span class="stat-icon pink">♡</span>
+           <span class="stat-label">Hábitos completados</span>
+           <strong id="stat-completed">0 / 0</strong>
+           <small>Pequeños pasos cuentan.</small>
+         </article>
+         <article class="stat-card">
+           <span class="stat-icon green">✿</span>
+           <span class="stat-label">Hábitos en tu lista</span>
+           <strong id="stat-total">0</strong>
+           <small>A tu propio ritmo.</small>
+         </article>
+         <article class="stat-card">
+           <span class="stat-icon orange">☼</span>
+           <span class="stat-label">Tu diario</span>
+           <strong id="stat-entries">0</strong>
+           <small>Recuerdos que has guardado.</small>
+         </article>
+       </div>
+
+
+       <div class="section-heading">
+         <div>
+           <span class="eyebrow">TUS PEQUEÑAS METAS</span>
+           <h2>Hábitos para hoy</h2>
+         </div>
+         <button class="text-button" data-go="habitos">Administrar →</button>
+       </div>
+
+
+       <div class="habit-list" id="home-habits"></div>
+
+
+       <article class="quote-card">
+         <span>❝</span>
+         <div>
+           <p id="daily-quote">No necesitas florecer todos los días para seguir creciendo.</p>
+           <small>UN RECORDATORIO DE HARU</small>
+         </div>
+       </article>
+     </section>
+
+
+     <section class="page-section" id="page-habitos">
+       <div class="page-intro">
+         <span class="eyebrow">CRECER SIN PRISA</span>
+         <h2>Mis hábitos <span>✿</span></h2>
+         <p>Las pequeñas acciones también construyen grandes cambios.</p>
+       </div>
+
+
+       <form class="form-card" id="habit-form">
+         <label for="habit-name">¿Qué te gustaría hacer?</label>
+         <div class="form-row">
+           <input id="habit-name" name="habit-name" maxlength="70" placeholder="Ej. Beber un vaso de agua" required>
+           <button class="primary-button" type="submit">+ Añadir</button>
+         </div>
+         <small>Puedes empezar con algo sencillo y realista.</small>
+       </form>
+
+
+<!-- Tarjeta de Zen Space -->
+<div class="zen-card">
+ <div class="zen-card-icon">❀</div>
+
+
+ <div class="zen-card-content">
+   <span class="eyebrow">TU RINCÓN DE BIENESTAR</span>
+   <h3>Un momento para ti</h3>
+   <p>
+     Deja el resto para después.
+     Dedica unos minutos a una sola cosa.
+   </p>
+
+
+   <div class="zen-card-tags">
+     <span>Autocuidado</span>
+     <span>Concentración</span>
+   </div>
+
+
+   <button
+     class="primary-button zen-open-button"
+     type="button"
+     onclick="navigate('zen')"
+   >
+     Entrar en Zen Space <span>→</span>
+   </button>
+ </div>
+</div>
+
+
+       <div class="list-toolbar">
+         <span id="habit-count">Tus hábitos</span>
+         <button class="text-button" id="reset-today">Desmarcar los de hoy</button>
+       </div>
+
+
+       <div class="habit-list full-habit-list" id="all-habits"></div>
+     </section>
+
+
+     <section class="page-section" id="page-calendario">
+       <div class="page-intro">
+         <span class="eyebrow">CADA DÍA FORMA PARTE DE TU HISTORIA</span>
+         <h2>Mi calendario <span>☼</span></h2>
+         <p>Observa tus días sin juzgarte por cómo fueron.</p>
+       </div>
+
+
+       <div class="calendar-card">
+         <div class="calendar-header">
+           <button class="icon-button" id="prev-month" aria-label="Mes anterior">←</button>
+           <h3 id="calendar-title">Mes y año</h3>
+           <button class="icon-button" id="next-month" aria-label="Mes siguiente">→</button>
+         </div>
+         <div class="calendar-grid" id="calendar-grid"></div>
+         <div class="calendar-legend">
+           <span><i class="legend-dot completed-dot"></i> Día con hábitos completados</span>
+           <span><i class="legend-dot diary-dot"></i> Día con entrada de diario</span>
+         </div>
+       </div>
+
+
+       <article class="day-detail" id="day-detail">
+         <span class="eyebrow">TU DÍA SELECCIONADO</span>
+         <h3 id="selected-date-title">Elige un día</h3>
+         <div id="selected-day-content"></div>
+       </article>
+     </section>
+
+
+     <section class="page-section" id="page-diario">
+      
+<div class="page-intro diary-intro">
+ <button
+   class="diary-settings-button"
+   type="button"
+   aria-label="Abrir ajustes"
+   title="Ajustes"
+   onclick="navigate('ajustes')"
+ >⚙</button>
+
+
+ <span class="eyebrow">UN LUGAR PARA TI</span>
+ <h2>Mi diario <span>♡</span></h2>
+ <p>No necesitas encontrar las palabras perfectas. Solo las tuyas.</p>
+</div>
+
+
+
+
+       <form class="diary-form" id="diary-form">
+         <label for="diary-date">Fecha de tu entrada</label>
+         <input id="diary-date" type="date" required>
+
+
+         <label for="diary-title">Un título para este recuerdo</label>
+         <input id="diary-title" maxlength="100" placeholder="Ej. Un día tranquilo">
+
+
+         <label for="diary-content">¿Qué tienes en mente?</label>
+         <textarea id="diary-content" rows="7" maxlength="10000" placeholder="Escribe sin prisa..."></textarea>
+
+
+         <div class="diary-actions">
+           <button class="primary-button" type="submit">Guardar entrada ♡</button>
+           <button class="secondary-button" id="cancel-edit" type="button" hidden>Cancelar edición</button>
+         </div>
+         <small>Tu diario se guarda en este navegador. Si borras sus datos, podrías perder tus entradas.</small>
+       </form>
+
+
+       <div class="section-heading diary-list-heading">
+         <div>
+           <span class="eyebrow">TUS RECUERDOS</span>
+           <h2>Entradas guardadas</h2>
+         </div>
+       </div>
+       <div class="diary-list" id="diary-list"></div>
+     </section>
+
+
+    
+   
+<section class="page-section" id="page-ajustes">
+ <div class="page-intro">
+   <span class="eyebrow">TU ESPACIO PERSONAL</span>
+   <h2>Ajustes de Haru <span>⚙</span></h2>
+   <p>Haz que Haru se sienta más tuyo. Cambia su ambiente y cuida tus pequeños momentos.</p>
+ </div>
+
+
+ <div class="settings-group">
+   <h3>🌸 Apariencia</h3>
+   <p class="settings-description">Elige los colores que acompañarán tus días.</p>
+
+
+   <div class="theme-grid">
+     <button class="theme-card theme-day" data-theme-choice="dia" aria-pressed="false">
+       <span class="theme-preview"><i></i><i></i><i></i></span>
+       <span class="theme-name">Día tranquilo</span>
+       <span class="theme-description">Azul cielo y luz suave</span>
+       <span class="theme-selected">Seleccionar tema</span>
+     </button>
+
+
+     <button class="theme-card theme-afternoon" data-theme-choice="tarde" aria-pressed="false">
+       <span class="theme-preview"><i></i><i></i><i></i></span>
+       <span class="theme-name">Tarde cálida</span>
+       <span class="theme-description">Naranja, terracota y lila</span>
+       <span class="theme-selected">Seleccionar tema</span>
+     </button>
+
+
+     <button class="theme-card theme-night" data-theme-choice="noche" aria-pressed="false">
+       <span class="theme-preview"><i></i><i></i><i></i></span>
+       <span class="theme-name">Noche serena</span>
+       <span class="theme-description">Azul profundo y estrellas</span>
+       <span class="theme-selected">Seleccionar tema</span>
+     </button>
+   </div>
+ </div>
+
+
+ <div class="settings-group">
+   <h3>📅 Inicio de semana</h3>
+   <p class="settings-description">¿Qué día quieres ver primero en tu calendario?</p>
+   <select id="week-start">
+     <option value="1">Lunes</option>
+     <option value="0">Domingo</option>
+   </select>
+ </div>
+
+
+ <div class="settings-group">
+   <h3>💾 Tus datos</h3>
+   <p class="settings-description">Guarda una copia de tus hábitos y entradas del diario para conservarlos.</p>
+   <div class="settings-actions">
+     <button class="settings-button" id="export-data" type="button">Exportar copia</button>
+     <button class="settings-button" id="import-trigger" type="button">Importar copia</button>
+     <input id="import-file" type="file" accept="application/json,.json" hidden>
+   </div>
+ </div>
+
+
+ <div class="settings-group">
+   <h3>🔒 Privacidad del diario</h3>
+   <p class="settings-description">Puedes establecer un PIN para añadir una barrera de acceso al diario en este dispositivo. No es un sistema de cifrado.</p>
+   <label for="diary-pin">PIN de 4 a 8 dígitos</label>
+   <input id="diary-pin" type="password" inputmode="numeric" maxlength="8" placeholder="Escribe tu PIN">
+   <div class="settings-actions">
+     <button class="settings-button" id="set-diary-pin" type="button">Guardar PIN</button>
+     <button class="settings-button" id="remove-diary-pin" type="button">Quitar PIN</button>
+   </div>
+ </div>
+
+
+ <div class="settings-group">
+   <h3>🔔 Recordatorios</h3>
+   <p class="settings-description">Prueba recordatorios para tus hábitos. El navegador debe permitir las notificaciones y Haru debe permanecer abierta para comprobar la hora.</p>
+   <label for="reminder-time">Hora del recordatorio</label>
+   <input id="reminder-time" type="time" value="20:00">
+   <label class="settings-toggle">
+     <input id="reminders-enabled" type="checkbox">
+     Activar recordatorios
+   </label>
+   <div class="settings-actions">
+     <button class="settings-button" id="test-reminder" type="button">Probar notificación</button>
+   </div>
+   <p id="reminder-status" class="settings-description" aria-live="polite">Los recordatorios están desactivados.</p>
+ </div>
+
+
+ <div class="settings-group">
+   <h3>🌱 Sobre Haru</h3>
+   <p>Haru · Versión 1.0</p>
+   <p class="settings-description">Un espacio tranquilo para cuidar tus hábitos, guardar tus pensamientos y florecer a tu propio ritmo.</p>
+ </div>
+</section>
+
+
+<section class="page-section" id="page-perfil">
+ <div class="page-intro">
+   <span class="eyebrow">TU PEQUEÑO RINCÓN</span>
+   <h2>Mi perfil <span>♡</span></h2>
+   <p>Haz que Haru se sienta un poquito más tuyo.</p>
+ </div>
+
+
+ <div class="settings-group profile-editor">
+   <div class="profile-preview">
+     <div class="profile-photo-preview">
+      
+     </div>
+     <p class="settings-description">
+       Esta imagen aparecerá en el círculo de tu perfil.
+     </p>
+   </div>
+
+
+   <label for="profile-photo">Tu foto</label>
+   <input
+     id="profile-photo"
+     type="file"
+     accept="image/*"
+   >
+
+
+   <label for="profile-name">¿Cómo quieres que te llamemos?</label>
+   <input
+     id="profile-name"
+     type="text"
+     maxlength="40"
+     placeholder="Escribe tu nombre preferido"
+     autocomplete="nickname"
+   >
+
+
+   <div class="settings-actions">
+     <button
+       class="settings-button"
+       id="save-profile"
+       type="button"
+     >Guardar perfil ♡</button>
+
+
+     <button
+       class="settings-button"
+       id="clear-profile"
+       type="button"
+     >Restablecer perfil</button>
+   </div>
+
+
+   <p class="settings-description" id="profile-status" aria-live="polite">
+     Tu perfil se guardará en este navegador.
+   </p>
+ </div>
+</section>
+
+
+<!-- Zen Space -->
+<section class="page-section" id="page-zen">
+ <div class="page-intro">
+   <span class="eyebrow">UN MOMENTO PARA TI</span>
+   <h2>Zen Space <span>❀</span></h2>
+   <p>Haz una sola cosa a la vez. Aquí tienes tu pequeño jardín.</p>
+ </div>
+
+
+ <div class="zen-setup">
+   <div class="settings-group">
+     <label for="zen-activity">¿Qué vas a hacer?</label>
+     <select id="zen-activity">
+       <option value="Cepillarse los dientes">Cepillarme los dientes</option>
+       <option value="Beber agua">Beber agua</option>
+       <option value="Estiramientos">Hacer estiramientos</option>
+       <option value="Ordenar">Ordenar un poquito</option>
+       <option value="Concentración">Concentrarme en una tarea</option>
+       <option value="Personalizado">Otra actividad</option>
+     </select>
+
+
+     <label for="zen-custom-activity">Nombre de tu actividad (opcional)</label>
+     <input id="zen-custom-activity" type="text" maxlength="60"
+       placeholder="Escribe tu actividad">
+
+
+     <label for="zen-duration">Duración</label>
+     <select id="zen-duration">
+       <option value="30">30 segundos</option>
+       <option value="60">1 minuto</option>
+       <option value="120" selected>2 minutos</option>
+       <option value="300">5 minutos</option>
+       <option value="600">10 minutos</option>
+       <option value="custom">Elegir otra duración</option>
+     </select>
+
+
+     <div id="zen-custom-duration" hidden>
+       <label for="zen-minutes">Minutos</label>
+       <input id="zen-minutes" type="number" min="0" max="180" value="3">
+
+
+       <label for="zen-seconds">Segundos</label>
+       <input id="zen-seconds" type="number" min="0" max="59" value="0">
+     </div>
+
+
+     <button class="settings-button" id="zen-start" type="button">
+       Entrar en mi jardín ♡
+     </button>
+   </div>
+ </div>
+
+
+<!-- Pantalla inmersiva del temporizador -->
+<div id="zen-session" class="zen-session" hidden>
+ <div class="zen-garden-content">
+   <span class="zen-kicker">UN MOMENTO PARA TI</span>
+
+
+   <h2 id="zen-session-title">Es hora de cuidarte</h2>
+   <p id="zen-session-activity">Cepillarse los dientes</p>
+
+
+   <div class="zen-timer-ring">
+     <div class="zen-timer-inner">
+       <span id="zen-countdown">02:00</span>
+       <small>RESPIRA · PRESENTE</small>
+     </div>
+   </div>
+
+
+   <p id="zen-session-message">
+     No necesitas hacer nada más. Solo estar aquí.
+   </p>
+   <button id="zen-return" class="zen-return-button" type="button" hidden>
+ Volver a Haru ♡
+</button>
+ </div>
+</div>
+
+
+</section>
+
+
+     <footer class="main-footer">haru · florecer también lleva su tiempo ♡</footer>
+   </main>
+ </div>
+</body>
+</html>
