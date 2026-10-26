@@ -1,3 +1,4 @@
+import { LocalNotifications } from "@capacitor/local-notifications";
 
 /* ========================================
    HARU — funciones e interacción
