@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "mkdir -p www && cp index.html manifest.json www/ && cp -r src Public www/"
+    "build": "mkdir -p www && cp index.html manifest.json www/ && cp -r src Public www/ && esbuild src/script.js --bundle --outfile=www/src/script.js"
   },
   "dependencies": {
     "@capacitor/core": "^7.4.3",
@@ -12,6 +12,7 @@
     "@capacitor/local-notifications": "^7.0.1"
   },
   "devDependencies": {
-    "@capacitor/cli": "^7.4.3"
+    "@capacitor/cli": "^7.4.3",
+    "esbuild": "^0.25.0"
   }
 }
