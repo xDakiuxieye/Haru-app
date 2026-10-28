@@ -2701,3 +2701,347 @@ body {
     flex-basis: 42px;
   }
 }
+
+
+/* =====================================================
+   HARU v1.0 — JARDÍN NOCTURNO
+   Capa visual de remodelación. No modifica la lógica.
+   ===================================================== */
+
+:root {
+  --radius: 24px;
+  --shadow: 0 18px 50px rgba(29, 45, 72, 0.09);
+}
+
+body[data-theme="noche"] {
+  --bg: #0b1424;
+  --surface: #131f33;
+  --surface-soft: #1a2b43;
+  --text: #e8eefb;
+  --muted: #a4b2c9;
+  --line: #2a3b56;
+  --accent: #9abcf0;
+  --accent-strong: #b3d0ff;
+  --accent-soft: #213653;
+  --accent-contrast: #0c1729;
+  --secondary: #c1a8ed;
+  --secondary-soft: #302a49;
+  --warm: #dfb68e;
+  --success: #9bcbb2;
+  --success-soft: #203d3a;
+  --danger: #f0a6b0;
+  --shadow: 0 20px 55px rgba(0, 0, 0, 0.22);
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at 12% 4%, rgba(110, 144, 203, 0.055), transparent 34rem),
+    radial-gradient(ellipse at 88% 38%, rgba(157, 127, 206, 0.045), transparent 32rem);
+  background-attachment: fixed;
+  letter-spacing: 0.005em;
+}
+
+body[data-theme="noche"] .main-content {
+  position: relative;
+  isolation: isolate;
+}
+
+body[data-theme="noche"] .main-content::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.38;
+  background:
+    radial-gradient(1.5px 1.5px at 14% 18%, rgba(205, 222, 255, .55) 50%, transparent 100%),
+    radial-gradient(1px 1px at 81% 22%, rgba(205, 222, 255, .45) 50%, transparent 100%),
+    radial-gradient(1px 1px at 72% 71%, rgba(205, 222, 255, .38) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 26% 84%, rgba(205, 222, 255, .35) 50%, transparent 100%);
+}
+
+.brand-capsule {
+  border-color: color-mix(in srgb, var(--line) 82%, transparent);
+  background: color-mix(in srgb, var(--surface) 91%, transparent);
+  box-shadow: 0 12px 34px rgba(12, 24, 43, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+body[data-theme="noche"] .brand-capsule {
+  background: linear-gradient(135deg, rgba(24, 39, 61, .96), rgba(18, 31, 51, .88));
+  border-color: rgba(160, 190, 232, .17);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .12), inset 0 1px rgba(255,255,255,.035);
+}
+
+.brand-mark {
+  box-shadow: inset 0 1px rgba(255,255,255,.16);
+}
+
+.brand-capsule .brand strong {
+  letter-spacing: 0.065em;
+}
+
+.profile-avatar {
+  border-color: var(--line);
+  background: var(--surface-soft);
+  box-shadow: inset 0 1px rgba(255,255,255,.06);
+}
+
+.topbar {
+  margin-bottom: clamp(26px, 4vw, 42px);
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.19em;
+  line-height: 1.7;
+}
+
+.topbar h1 {
+  letter-spacing: -0.035em;
+}
+
+.welcome-card {
+  min-height: 300px;
+  padding: clamp(26px, 4.5vw, 48px);
+  border-radius: 30px;
+  border-color: color-mix(in srgb, var(--line) 84%, transparent);
+  background:
+    radial-gradient(ellipse at 93% 14%, color-mix(in srgb, var(--secondary) 14%, transparent), transparent 38%),
+    linear-gradient(128deg, var(--surface) 6%, var(--surface-soft) 100%);
+  box-shadow: var(--shadow), inset 0 1px rgba(255,255,255,.035);
+}
+
+body[data-theme="noche"] .welcome-card {
+  background:
+    radial-gradient(ellipse at 88% 12%, rgba(173, 149, 220, .16), transparent 42%),
+    radial-gradient(ellipse at 5% 100%, rgba(108, 151, 200, .13), transparent 46%),
+    linear-gradient(128deg, #15243a 0%, #1b2d47 57%, #223852 100%);
+  border-color: rgba(159, 188, 226, .2);
+  box-shadow: 0 26px 64px rgba(0, 0, 0, .16), inset 0 1px rgba(255,255,255,.055);
+}
+
+.welcome-copy h2,
+.page-intro h2 {
+  letter-spacing: -0.045em;
+  line-height: 1.18;
+}
+
+.welcome-copy p,
+.page-intro p {
+  line-height: 1.85;
+}
+
+.welcome-copy .primary-button {
+  min-height: 48px;
+  margin-top: 16px;
+  padding: 12px 21px;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--accent-strong) 16%, transparent);
+}
+
+body[data-theme="noche"] .welcome-copy .primary-button {
+  background: linear-gradient(135deg, #b6d1fa, #91b7ee);
+  color: #101b2d;
+  box-shadow: 0 10px 26px rgba(103, 145, 207, .17);
+}
+
+.welcome-art {
+  flex-basis: 160px;
+  opacity: 0.72;
+  transform: scale(.92);
+  transform-origin: center right;
+}
+
+body[data-theme="noche"] .art-sun {
+  background: #c3a7e9;
+  opacity: .28;
+  box-shadow: 0 0 65px rgba(190, 166, 235, .2);
+}
+
+body[data-theme="noche"] .art-branch {
+  color: #8eaedc;
+  opacity: .55;
+}
+
+body[data-theme="noche"] .art-flower {
+  color: #d2b9f6;
+}
+
+.section-heading {
+  margin-top: clamp(34px, 5vw, 48px);
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  font-size: clamp(23px, 2.6vw, 29px);
+  letter-spacing: -0.035em;
+}
+
+.stat-card,
+.habit-row,
+.form-card,
+.diary-form,
+.calendar-card,
+.day-detail,
+.diary-entry,
+.theme-card {
+  border-color: color-mix(in srgb, var(--line) 88%, transparent);
+  box-shadow: 0 8px 28px rgba(21, 35, 56, .035);
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+body[data-theme="noche"] .stat-card,
+body[data-theme="noche"] .habit-row,
+body[data-theme="noche"] .form-card,
+body[data-theme="noche"] .diary-form,
+body[data-theme="noche"] .calendar-card,
+body[data-theme="noche"] .day-detail,
+body[data-theme="noche"] .diary-entry,
+body[data-theme="noche"] .theme-card {
+  background: linear-gradient(145deg, rgba(24, 39, 61, .96), rgba(19, 31, 50, .96));
+  border-color: rgba(153, 180, 219, .15);
+  box-shadow: inset 0 1px rgba(255,255,255,.025), 0 10px 28px rgba(0,0,0,.07);
+}
+
+.stat-card:hover,
+.habit-row:hover,
+.diary-entry:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+}
+
+.stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+}
+
+.stat-card strong {
+  letter-spacing: -0.035em;
+}
+
+input,
+textarea,
+select {
+  border-radius: 13px;
+}
+
+.primary-button,
+.secondary-button,
+.today-button,
+.icon-button,
+.settings-button,
+.zen-return-button {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.primary-button:hover,
+.settings-button:hover,
+.zen-return-button:hover {
+  transform: translateY(-2px);
+}
+
+.nav-item {
+  border-radius: 15px;
+}
+
+.nav-item.active {
+  box-shadow: inset 0 1px rgba(255,255,255,.08);
+}
+
+body[data-theme="noche"] .nav-item.active {
+  background: linear-gradient(135deg, #2a4261, #233750);
+  color: #c4d9fb;
+}
+
+.main-footer {
+  padding-top: 42px;
+  padding-bottom: 16px;
+  line-height: 1.9;
+  letter-spacing: .035em;
+}
+
+.main-footer .made-by {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .12em;
+  opacity: .86;
+}
+
+@media (max-width: 650px) {
+  .topbar {
+    margin-bottom: 26px;
+  }
+
+  .welcome-card {
+    min-height: 0;
+    padding: 26px 22px;
+    border-radius: 25px;
+  }
+
+  .welcome-copy h2 {
+    font-size: clamp(29px, 7.4vw, 37px);
+  }
+
+  .welcome-copy p {
+    font-size: 14px;
+  }
+
+  .welcome-art {
+    flex-basis: 120px;
+    margin-right: -22px;
+    opacity: .55;
+    transform: scale(.88);
+  }
+
+  .section-heading {
+    margin-top: 36px;
+  }
+
+  .stat-card {
+    border-radius: 20px;
+  }
+
+  .main-nav {
+    border-color: rgba(145, 174, 215, .18);
+    background: color-mix(in srgb, var(--surface) 90%, transparent);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, .2), inset 0 1px rgba(255,255,255,.05);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+  }
+
+  .nav-item.active {
+    border-radius: 999px;
+  }
+
+  .main-footer {
+    padding-top: 34px;
+  }
+}
+
+@media (max-width: 380px) {
+  .welcome-card {
+    padding: 23px 18px;
+  }
+
+  .welcome-art {
+    flex-basis: 90px;
+    margin-right: -28px;
+    opacity: .4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
