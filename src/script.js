@@ -1462,3 +1462,29 @@ initProfile();
   }
 });
 })();
+
+
+/* ---------- Bienvenida inicial: saludo según la hora ---------- */
+(function initHaruSplash() {
+  const splash = document.querySelector("#haru-splash");
+  const greeting = document.querySelector("#haru-splash-greeting");
+  if (!splash || !greeting) return;
+
+  const hour = new Date().getHours();
+  let message;
+
+  if (hour >= 5 && hour < 12) {
+    message = "Buenos días · que hoy florezca algo bonito";
+  } else if (hour >= 12 && hour < 19) {
+    message = "Buenas tardes · vamos a nuestro ritmo";
+  } else {
+    message = "Buenas noches · mañana será otro comienzo";
+  }
+
+  greeting.textContent = message;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.setTimeout(() => {
+    splash.classList.add("is-leaving");
+    window.setTimeout(() => splash.remove(), reducedMotion ? 0 : 700);
+  }, reducedMotion ? 650 : 1150);
+})();
