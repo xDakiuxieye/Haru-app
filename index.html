@@ -92,80 +92,80 @@
      </header>
 
 
-     <section class="page-section active" id="page-inicio">
-       <div class="welcome-card">
-         <div class="welcome-copy">
-          
-<span class="eyebrow">BIENVENIDA A TU ESPACIO</span>
-<h2>Bienvenido!, <span id="home-profile-name">...</span> <span>✿</span></h2>
-<p>No tienes que hacerlo todo hoy.<br>Empieza por algo pequeño.</p>
+      <section class="page-section active" id="page-inicio">
+  <section class="sanctuary-welcome">
+    <div class="sanctuary-glow"></div>
+    <div class="sanctuary-kanji" aria-hidden="true">春</div>
+    <div class="sanctuary-welcome-content">
+      <div class="sanctuary-meta">
+        <span class="meta-pill"><i></i> TU ESPACIO, TU RITMO</span>
+        <span class="meta-season">UN NUEVO COMIENZO</span>
+      </div>
+      <p class="sanctuary-kicker">UN MOMENTO PARA TI</p>
+      <h2>Qué gusto tenerte aquí, <em id="home-profile-name">florecita</em>.</h2>
+      <p class="sanctuary-lead">No necesitas tenerlo todo resuelto. Este pequeño espacio es para avanzar, descansar y volver a empezar cuando lo necesites.</p>
+      <button class="primary-button" data-go="habitos">Cultivar mi día <span aria-hidden="true">↗</span></button>
+    </div>
+    <div class="sanctuary-flower" aria-hidden="true">❀</div>
+  </section>
 
+  <div class="sanctuary-section-label">
+    <div><span class="eyebrow">TU PRESENTE</span><h2>Armonía del día</h2></div>
+    <span class="sanctuary-soft-note">Pequeños pasos también son progreso.</span>
+  </div>
 
-           <button class="primary-button" data-go="habitos">Ver mis hábitos <span>→</span></button>
-         </div>
-         <div class="welcome-art" aria-hidden="true">
-           <span class="art-sun"></span>
-           <span class="art-branch">枝</span>
-           <span class="art-flower">❀</span>
-           <span class="art-dot">✦</span>
-         </div>
-       </div>
+  <section class="sanctuary-bento">
+    <article class="sanctuary-progress-card">
+      <div class="sanctuary-card-heading">
+        <div><span class="eyebrow">EQUILIBRIO DIARIO</span><h3>Un día a la vez</h3></div>
+        <span class="sanctuary-status">A tu ritmo</span>
+      </div>
+      <div class="sanctuary-progress-body">
+        <div class="sanctuary-ring" aria-label="Progreso de hábitos">
+          <svg viewBox="0 0 160 160" role="img" aria-hidden="true">
+            <circle class="ring-track" cx="80" cy="80" r="65"></circle>
+            <circle class="ring-value" id="home-progress-ring" cx="80" cy="80" r="65"></circle>
+          </svg>
+          <div class="sanctuary-ring-label"><strong id="home-progress-percent">0%</strong><span>COMPLETADO</span></div>
+        </div>
+        <div class="sanctuary-progress-copy">
+          <strong id="home-progress-summary">Todavía hay espacio para empezar.</strong>
+          <p id="home-progress-message">Cada hábito que marcas es una pequeña forma de cuidarte. No hay prisa.</p>
+          <div class="sanctuary-mini-stats">
+            <span><b id="stat-completed">0 / 0</b> hábitos hechos</span>
+            <span><b id="stat-total">0</b> en tu lista</span>
+          </div>
+        </div>
+      </div>
+      <div class="sanctuary-card-foot"><span>✿ El progreso no tiene que ser perfecto.</span><button class="text-button" data-go="habitos">Ver mis hábitos ↗</button></div>
+    </article>
 
+    <div class="sanctuary-side-stack">
+      <article class="sanctuary-reflection-card">
+        <div class="sanctuary-reflection-top"><span class="eyebrow">REFLEXIÓN DEL ALBA</span><span aria-hidden="true">❝</span></div>
+        <blockquote id="daily-quote">No necesitas florecer todos los días para seguir creciendo.</blockquote>
+        <span class="sanctuary-reflection-caption">UN RECORDATORIO DE HARU</span>
+      </article>
+      <article class="sanctuary-journal-card">
+        <div class="sanctuary-journal-icon" aria-hidden="true">♡</div>
+        <div><span class="eyebrow">TU MUNDO INTERIOR</span><h3>Guarda un momento de hoy</h3><p>Hay días que merecen quedarse un poquito más.</p></div>
+        <button class="text-button" data-go="diario">Abrir mi diario ↗</button>
+        <span class="sanctuary-entry-count"><strong id="stat-entries">0</strong> recuerdos guardados</span>
+      </article>
+    </div>
+  </section>
 
-       <div class="section-heading">
-         <div>
-           <span class="eyebrow">POQUITO A POQUITO</span>
-           <h2>Tu día de hoy</h2>
-         </div>
-         <button class="text-button" data-go="habitos">Ver todos →</button>
-       </div>
+  <section class="sanctuary-habits-section">
+    <div class="sanctuary-section-label">
+      <div><span class="eyebrow">TUS PEQUEÑOS RITUALES</span><h2>Hábitos para hoy</h2></div>
+      <button class="text-button" data-go="habitos">Administrar hábitos ↗</button>
+    </div>
+    <div class="habit-list" id="home-habits"></div>
+  </section>
+  <footer class="sanctuary-footer"><span>春</span><p>Florecer también lleva su tiempo.</p><small>HECHO CON CALMA ♡</small></footer>
+ </section>
 
-
-       <div class="stats-grid">
-         <article class="stat-card">
-           <span class="stat-icon pink">♡</span>
-           <span class="stat-label">Hábitos completados</span>
-           <strong id="stat-completed">0 / 0</strong>
-           <small>Pequeños pasos cuentan.</small>
-         </article>
-         <article class="stat-card">
-           <span class="stat-icon green">✿</span>
-           <span class="stat-label">Hábitos en tu lista</span>
-           <strong id="stat-total">0</strong>
-           <small>A tu propio ritmo.</small>
-         </article>
-         <article class="stat-card">
-           <span class="stat-icon orange">☼</span>
-           <span class="stat-label">Tu diario</span>
-           <strong id="stat-entries">0</strong>
-           <small>Recuerdos que has guardado.</small>
-         </article>
-       </div>
-
-
-       <div class="section-heading">
-         <div>
-           <span class="eyebrow">TUS PEQUEÑAS METAS</span>
-           <h2>Hábitos para hoy</h2>
-         </div>
-         <button class="text-button" data-go="habitos">Administrar →</button>
-       </div>
-
-
-       <div class="habit-list" id="home-habits"></div>
-
-
-       <article class="quote-card">
-         <span>❝</span>
-         <div>
-           <p id="daily-quote">No necesitas florecer todos los días para seguir creciendo.</p>
-           <small>UN RECORDATORIO DE HARU</small>
-         </div>
-       </article>
-     </section>
-
-
-     <section class="page-section" id="page-habitos">
+ <section class="page-section" id="page-habitos">
        <div class="page-intro">
          <span class="eyebrow">CRECER SIN PRISA</span>
          <h2>Mis hábitos <span>✿</span></h2>
