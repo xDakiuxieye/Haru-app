@@ -331,6 +331,32 @@ function renderHabits() {
   $("#stat-total").textContent = String(habits.length);
   $("#habit-count").textContent =
     `${habits.length} ${habits.length === 1 ? "hábito" : "hábitos"}`;
+  const progress = habits.length ? Math.round((completed / habits.length) * 100) : 0;
+  const progressPercent = $("#home-progress-percent");
+  const progressRing = $("#home-progress-ring");
+  const progressSummary = $("#home-progress-summary");
+  const progressMessage = $("#home-progress-message");
+
+  if (progressPercent) progressPercent.textContent = progress + "%";
+  if (progressRing) {
+    const circumference = 2 * Math.PI * 65;
+    progressRing.style.strokeDasharray = String(circumference);
+    progressRing.style.strokeDashoffset = String(circumference * (1 - progress / 100));
+  }
+  if (progressSummary) {
+    progressSummary.textContent = habits.length === 0
+      ? "Tu primer paso puede ser muy pequeño."
+      : progress === 100
+        ? "Hoy has cuidado de cada pequeño hábito."
+        : completed + " de " + habits.length + " hábitos cultivados";
+  }
+  if (progressMessage) {
+    progressMessage.textContent = habits.length === 0
+      ? "Añade un hábito cuando quieras. No hay prisa por empezar."
+      : progress === 100
+        ? "Has completado tu lista de hoy. Date un momento para reconocerlo."
+        : "Cada hábito que marcas es una pequeña forma de cuidarte. No hay prisa.";
+  }
 }
 
 $("#habit-form").addEventListener("submit", event => {
