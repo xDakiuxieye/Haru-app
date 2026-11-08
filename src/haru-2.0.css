@@ -221,10 +221,6 @@ input:focus,select:focus,textarea:focus { border-color:var(--accent);background:
 .empty-state strong,.empty-state span { display:block; }
 .empty-state strong { color:var(--text);font:500 20px var(--font-display); }
 footer { color:var(--muted); }
-@media (min-width:1100px) {
-  #page-inicio { display:none; }
-  #page-inicio.active { display:block; }
-}
 @media (max-width:900px) {
   .sidebar { height:72px;padding:0 20px; }
   .brand-row { min-width:unset; }
