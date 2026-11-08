@@ -269,3 +269,61 @@ footer { color:var(--muted); }
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important; }
 }
+/* Haru 2.0 — Inicio editorial Sanctuary */
+.sanctuary-welcome{position:relative;isolation:isolate;overflow:hidden;min-height:310px;padding:clamp(30px,5vw,58px);border:1px solid rgba(255,255,255,.8);border-radius:2.2rem;background:linear-gradient(112deg,var(--surface) 0%,var(--surface) 62%,var(--accent-soft) 100%);box-shadow:var(--shadow)}
+.sanctuary-glow{position:absolute;z-index:-1;width:360px;height:360px;right:8%;top:-190px;border-radius:50%;background:var(--accent-soft);filter:blur(35px);opacity:.8}
+.sanctuary-kanji{position:absolute;z-index:-1;right:4%;bottom:-72px;color:var(--accent);font:clamp(190px,24vw,280px)/1 var(--font-display);opacity:.13;user-select:none}
+.sanctuary-welcome-content{max-width:760px;position:relative;z-index:1}
+.sanctuary-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.meta-pill,.sanctuary-status{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:var(--surface-soft);color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.08em}
+.meta-pill i{width:6px;height:6px;border-radius:50%;background:var(--secondary)}
+.meta-season{color:var(--muted);font-size:9px;letter-spacing:.15em}
+.sanctuary-kicker{margin:30px 0 8px;color:var(--accent-strong);font-size:10px;font-weight:700;letter-spacing:.17em}
+.sanctuary-welcome h2{max-width:740px;margin:0;font:400 clamp(34px,4.6vw,54px)/1.13 var(--font-display);letter-spacing:-.04em}
+.sanctuary-welcome h2 em{color:var(--accent-strong);font-weight:400}
+.sanctuary-lead{max-width:570px;margin:16px 0 22px;color:var(--muted);font-size:13px;line-height:1.9}
+.sanctuary-flower{position:absolute;right:16%;top:22%;color:var(--accent);font-size:46px;opacity:.25;transform:rotate(14deg)}
+.sanctuary-section-label{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:38px 0 17px}
+.sanctuary-section-label h2{margin:5px 0 0;font:500 27px/1.2 var(--font-display);letter-spacing:-.025em}
+.sanctuary-soft-note{color:var(--muted);font:italic 13px var(--font-display)}
+.sanctuary-bento{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.9fr);gap:18px;align-items:stretch}
+.sanctuary-progress-card,.sanctuary-reflection-card,.sanctuary-journal-card{min-width:0;overflow:hidden;border:1px solid rgba(255,255,255,.8);border-radius:1.8rem;background:var(--surface);box-shadow:var(--shadow)}
+.sanctuary-progress-card{display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,3vw,30px)}
+.sanctuary-card-heading{display:flex;align-items:start;justify-content:space-between;gap:12px}
+.sanctuary-card-heading h3,.sanctuary-journal-card h3{margin:5px 0 0;font:500 24px/1.25 var(--font-display)}
+.sanctuary-progress-body{display:flex;align-items:center;gap:clamp(20px,3vw,34px);padding:28px 0}
+.sanctuary-ring{width:174px;height:174px;flex:0 0 174px;position:relative}
+.sanctuary-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.sanctuary-ring circle{fill:none;stroke-width:8}
+.ring-track{stroke:var(--surface-soft)}
+.ring-value{stroke:var(--accent);stroke-linecap:round;stroke-dasharray:408.4;stroke-dashoffset:408.4;transition:stroke-dashoffset .6s ease}
+.sanctuary-ring-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.sanctuary-ring-label strong{font:500 39px/1 var(--font-display)}
+.sanctuary-ring-label span{margin-top:7px;color:var(--muted);font-size:8px;letter-spacing:.13em}
+.sanctuary-progress-copy{flex:1}
+.sanctuary-progress-copy>strong{font:500 21px/1.35 var(--font-display)}
+.sanctuary-progress-copy p{margin:9px 0 17px;color:var(--muted);font-size:11px;line-height:1.8}
+.sanctuary-mini-stats{display:flex;gap:9px;flex-wrap:wrap}
+.sanctuary-mini-stats span{padding:7px 10px;border-radius:999px;background:var(--surface-soft);color:var(--muted);font-size:9px}
+.sanctuary-mini-stats b{color:var(--text)}
+.sanctuary-card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 -30px -30px;padding:15px 25px;background:var(--surface-soft);color:var(--muted);font-size:10px}
+.sanctuary-side-stack{display:grid;grid-template-rows:1fr 1fr;gap:18px}
+.sanctuary-reflection-card{display:flex;flex-direction:column;justify-content:space-between;padding:23px;background:var(--surface-soft)}
+.sanctuary-reflection-top{display:flex;justify-content:space-between;color:var(--accent-strong)}
+.sanctuary-reflection-top>span:last-child{font:34px/1 var(--font-display)}
+.sanctuary-reflection-card blockquote{margin:18px 0;font:italic 22px/1.42 var(--font-display)}
+.sanctuary-reflection-caption{color:var(--muted);font-size:8px;letter-spacing:.14em}
+.sanctuary-journal-card{position:relative;display:grid;grid-template-columns:auto 1fr;align-content:center;column-gap:13px;padding:20px}
+.sanctuary-journal-icon{grid-row:span 2;width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--accent-soft);color:var(--accent-strong);font-size:20px}
+.sanctuary-journal-card h3{font-size:19px}
+.sanctuary-journal-card p{margin:5px 0;color:var(--muted);font-size:10px}
+.sanctuary-journal-card>.text-button{grid-column:2;justify-self:start;margin:8px 0 0;padding:5px 0;border:0}
+.sanctuary-entry-count{position:absolute;right:17px;top:15px;color:var(--muted);font-size:8px}
+.sanctuary-entry-count strong{color:var(--accent-strong);font:500 15px var(--font-display)}
+.sanctuary-habits-section{margin-top:12px}
+.sanctuary-footer{display:flex;align-items:center;justify-content:center;gap:10px;margin:54px 0 10px;color:var(--muted)}
+.sanctuary-footer>span{color:var(--accent);font:24px var(--font-display)}
+.sanctuary-footer p{font:italic 15px var(--font-display)}
+.sanctuary-footer small{font-size:8px;letter-spacing:.12em}
+@media(max-width:850px){.sanctuary-bento{grid-template-columns:1fr}.sanctuary-side-stack{grid-template-columns:1fr 1fr;grid-template-rows:auto}.sanctuary-reflection-card,.sanctuary-journal-card{min-height:190px}}
+@media(max-width:600px){.sanctuary-welcome{min-height:330px;padding:26px 22px;border-radius:1.7rem}.sanctuary-welcome h2{font-size:36px}.sanctuary-lead{max-width:95%;font-size:12px}.sanctuary-kanji{right:-15px;bottom:-55px;font-size:210px}.sanctuary-flower{right:10%;top:18%;font-size:30px}.sanctuary-section-label{align-items:start;flex-direction:column;margin:30px 0 14px}.sanctuary-section-label h2{font-size:24px}.sanctuary-soft-note{font-size:11px}.sanctuary-progress-body{flex-direction:column;text-align:center;padding:22px 0}.sanctuary-ring{width:150px;height:150px;flex-basis:150px}.sanctuary-ring-label strong{font-size:34px}.sanctuary-progress-copy>strong{font-size:20px}.sanctuary-mini-stats{justify-content:center}.sanctuary-card-foot{margin:0 -20px -20px;padding:13px 18px;flex-wrap:wrap}.sanctuary-side-stack{grid-template-columns:1fr;grid-template-rows:auto}.sanctuary-reflection-card{min-height:190px}.sanctuary-journal-card{min-height:165px}.sanctuary-footer{flex-wrap:wrap;gap:6px}.sanctuary-footer p{font-size:13px}.sanctuary-footer small{width:100%;text-align:center}}
