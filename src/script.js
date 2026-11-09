@@ -1216,7 +1216,7 @@ function renderProfile() {
   const preview = $("#profile-photo-preview");
 
   if (name) name.value = savedName;
-  if (homeName) homeName.textContent = savedName || "florecita";
+  if (homeName) homeName.textContent = savedName || "lunita";
 
   profilePhotoData = localStorage.getItem(PROFILE_KEYS.photo) || "";
 
